@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>عروض Abdelhak shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .offers-page {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 28px;
+      color: orange;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding-bottom: 20px;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card h4 {
+      margin: 15px 0 5px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .price {
+      color: orange;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .product-card button {
+      padding: 8px 16px;
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .product-card button:hover {
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="offers-page">
+    <h2 class="section-title">عروض التشطيب</h2>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="data/100.jpg" alt="عرض 1">
+        <h4>طقم تشطيب اقتصادي</h4>
+        <p class="old-price">بدلاً من <span>8500</span> جنيه</p>
+        <p class="price">الآن بـ <strong>7599</strong> جنيه</p>
+        <button class="add-to-cart" data-name="عرض تشطيب اقتصادي" data-price="7599">أضف للسلة</button>
+      </div>
+
+      <div class="product-card">
+        <img src="data/99.jpg" alt="عرض 2">
+        <h4>عرض فلتر + خلاط</h4>
+        <p class="old-price">بدلاً من <span>1100</span> جنيه</p>
+        <p class="price">الآن بـ <strong>999</strong> جنيه</p>
+        <button class="add-to-cart" data-name="عرض فلتر + خلاط" data-price="999">أضف للسلة</button>
+      </div>
+
+      <div class="product-card">
+        <img src="data/98.jpg" alt="عرض 3">
+        <h4>عرض سخان + طقم خلاطات</h4>
+        <p class="old-price">بدلاً من <span>2500</span> جنيه</p>
+        <p class="price">الآن بـ <strong>1999</strong> جنيه</p>
+        <button class="add-to-cart" data-name="عرض سخان + خلاطات" data-price="1999">أضف للسلة</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- 🟠 اللوجو والوصف -->
+      <div class="footer-logo">
+        <img src="data/logo.png" alt="Abdelhak Shop Logo">
+        <p>متخصصون في مستلزمات السباكة والتشطيب بأفضل جودة وأفضل سعر.</p>
+      </div>
+
+      <!-- 🟠 روابط مهمة -->
+      <div class="footer-links">
+        <h4>روابط</h4>
+        <ul>
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#">العروض</a></li>
+          <li><a href="#">اتصل بنا</a></li>
+          <li><a href="#">معلومات عنا</a></li>
+        </ul>
+      </div>
+
+      <!-- 🟠 أيقونات السوشيال -->
+      <div class="footer-social">
+        <h4>تابعنا</h4>
+        <div class="social-icons">
+          <a href="https://wa.me/201234567890" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Abdelhak shop. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.add-to-cart');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.dataset.name;
+        const price = button.dataset.price;
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name, price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert("✅ تم إضافة المنتج إلى السلة");
+      });
+    });
+  </script>
+
+</body>
+</html>

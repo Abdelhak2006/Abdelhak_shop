@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>فروعنا - Abdelhak Shop</title>
+  <link rel="icon" href="data/logo1.png" type="img/png">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+    }
+
+    .branches-section {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .branches-section h2 {
+      font-size: 30px;
+      color: orange;
+      margin-bottom: 40px;
+      direction: rtl;
+    }
+
+    .branch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .branch-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: right;
+    }
+
+    .branch-card h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .branch-card p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .branch-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: orange;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .branch-card a:hover {
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="branches-section">
+    <h2>فروع Abdelhak Shop</h2>
+
+    <div class="branch-grid">
+
+      <div class="branch-card">
+        <h3>فرع طبلوها</h3>
+        <p>شارع القاصد، بجوار مسجد الفتح، طبلوها، مركز تلا، المنوفية</p>
+        <p>يومياً من 10 صباحاً لـ 10 مساءً</p>
+        <a href="https://maps.app.goo.gl/xxxx" target="_blank">الاتجاه للمكان</a>
+      </div>
+
+      <div class="branch-card">
+        <h3>فرع تلا</h3>
+        <p>شارع المدارس، بجوار محل النور، تلا، المنوفية</p>
+        <p>من السبت للخميس، 10 ص – 9 م</p>
+        <a href="https://maps.app.goo.gl/yyyy" target="_blank">الاتجاه للمكان</a>
+      </div>
+
+      <div class="branch-card">
+        <h3>فرع شبين الكوم</h3>
+        <p>أمام مستشفى الجامعة، شبين الكوم، المنوفية</p>
+        <p>من 11 ص – 8 م</p>
+        <a href="https://maps.app.goo.gl/zzzz" target="_blank">الاتجاه للمكان</a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
